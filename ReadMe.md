@@ -30,8 +30,6 @@ If the `ar_pose_marker` topic is not found then the following should be done. Fi
 ssh pal@tiago-66c
 ```
 
-Password: pal
-
 Once login is done, run the following command.
 
 ```bash

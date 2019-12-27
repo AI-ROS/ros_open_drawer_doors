@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="open_drawer", type="tf_wrist.py", name="frame", output="screen"/>
+  <node pkg="open_drawer", type="drawer_open.py", name="drawer_open", output="screen"/>
+
+</launch>

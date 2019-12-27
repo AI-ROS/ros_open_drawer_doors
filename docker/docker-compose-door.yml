@@ -1,0 +1,31 @@
+version: '2'
+services:
+
+  ar-marker-recognition:
+    image: 141.69.58.19:5000/iki/marvin:kinetic
+    environment:
+      ROS_IP: $ROS_IP
+      ROS_MASTER_URI: $ROS_MASTER_URI
+    stdin_open: true
+    network_mode: host
+    restart: "unless-stopped"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - $HOME/catkin_ws/src/prj-iki-robotics/marvin:/root/catkin_ws/src/prj-iki-robotics/marvin
+    tty: true
+    command: roslaunch marvin_bringup ar_track_alvar_marker_recognition_head.launch
+
+
+  drawer-door-opening:
+    image: 141.69.58.19:5000/iki/tiago:kinetic
+    environment:
+      ROS_IP: $ROS_IP
+      ROS_MASTER_URI: $ROS_MASTER_URI
+    stdin_open: true
+    network_mode: host
+    restart: "unless-stopped"
+    volumes:
+      - $HOME/catkin_ws/src/prj-iki-robotics/ws18_pranav_nehal_open_doors:/root/catkin_ws/src/prj-iki-robotics/ws18_pranav_nehal_open_doors
+    tty: true
+    command: roslaunch ws18_pranav_nehal_open_doors draw_door.launch
+    

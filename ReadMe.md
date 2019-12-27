@@ -4,6 +4,8 @@ The aim of this project is to evaluate different methods to open desk drawers an
 
 # Initial setup.
 
+This package only works if your robot has a node to detect AR Markers.
+
 ### Setting the ROS_IP and ROS_MASTER_URI.
 
 The first step is to connect to the Tiago robot. For this the following commands are used to set `ROS_IP` and `ROS_MASTER_URI`.  
